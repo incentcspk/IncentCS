@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
 <title>Incent CS — Online Computer Science Coaching Your Family Can Trust</title>
 <meta name="description" content="Incent CS is a premium online Computer Science coaching center. We teach kids and students to truly understand code — from C/C++ foundations to AI-assisted engineering, in small live batches." />
 <meta name="author" content="Incent CS" />
@@ -326,6 +327,11 @@
   .tc-point .label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; color: oklch(0.97 0.01 240 / 0.9); }
   .tc-point .body { font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6; }
   .tc-note { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid oklch(1 0 0 / 0.05); font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em; color: var(--neon-teal); }
+  .tc-price-row { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid oklch(1 0 0 / 0.08); display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .tc-price { font-family: var(--font-mono); font-size: 1.35rem; font-weight: 600; color: oklch(0.97 0.01 240 / 0.95); }
+  .tc-price small { font-size: 0.7rem; font-weight: 400; color: var(--muted-foreground); margin-left: 0.25rem; }
+  .tc-duration { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.05em; color: var(--muted-foreground); border: 1px solid oklch(1 0 0 / 0.1); border-radius: 999px; padding: 0.3rem 0.7rem; white-space: nowrap; }
+  .tracks-material-note { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.03em; color: var(--neon-teal); }
 
   /* WHY US */
   .why-panel {
@@ -463,7 +469,7 @@
       <div class="eyebrow" style="color:var(--neon-purple)">// 02 · COURSES</div>
       <h2 class="section-title" style="max-width:42rem;">Seven courses. One complete journey.</h2>
     </div>
-    <p>Pick one course based on your goal, or take them together for a complete computer science foundation. Every course is taught online, live, in small groups.</p>
+    <p>Pick one course based on your goal, or take them together for a complete computer science foundation. Every course is taught online, live, in small groups, and runs for 1–1.5 months. <span class="tracks-material-note">Learning material is provided if needed.</span></p>
   </div>
 
   <div class="tracks-grid" id="tracksGrid"></div>
@@ -492,7 +498,7 @@
   <div class="contact-wrap">
     <div class="eyebrow" style="color:var(--neon-teal)">// 04 · CONTACT US</div>
     <h2 class="contact-title" style="font-weight:600;">Let's <span class="neon-text">talk</span>.</h2>
-    <p class="contact-sub">All our classes are held online — you can join from anywhere. Each course runs for approximately 1.5 to 2 months, depending on the course level and pace. Reach out for course details, fee structure, or to ask us anything.</p>
+    <p class="contact-sub">All our classes are held online — you can join from anywhere. Each course runs for approximately 1 to 1.5 months. Learning material is provided if needed. Reach out for course details, fee structure, or to ask us anything.</p>
 
     <div class="contact-cards">
       <a href="tel:+923452182099" class="contact-card ct-teal">
@@ -535,42 +541,42 @@
         { label: "HTML", body: "Clean, semantic pages that actually make sense to browsers and readers." },
         { label: "CSS", body: "Modern layouts with Flexbox and Grid, plus polished responsive design." },
         { label: "JavaScript", body: "ES6+, DOM handling, events and async work — explained the simple way." }
-      ], accent: "teal" },
+      ], accent: "teal", price: "PKR 15,000", duration: "1–1.5 months" },
     { id: "02", tag: "TRACK / 02", title: "Python from Scratch", subtitle: "Perfect for beginners and school students who want a strong start.",
       points: [
         { label: "Basics", body: "Syntax, variables, conditions and loops — taught patiently." },
         { label: "Structure", body: "Functions, modules and the standard library, with real examples." },
         { label: "OOP", body: "Classes, objects, inheritance and polymorphism made easy to picture." }
-      ], accent: "purple" },
-    { id: "03", tag: "TRACK / 03", title: "C and C++ Foundations", subtitle: "The base every serious programmer should have.",
+      ], accent: "purple", price: "PKR 13,000", duration: "1–1.5 months" },
+    { id: "03", tag: "TRACK / 03", title: "C++ Foundations", subtitle: "C and C++, taught together — the base every serious programmer should have.",
       points: [
         { label: "C Programming", body: "Conditions, loops, functions and pointers — the way memory really works." },
         { label: "C++", body: "OOP concepts, inheritance and polymorphism with clear day-to-day examples." },
         { label: "Habit", body: "We focus on strong logic building, not just passing exams." }
-      ], accent: "green" },
+      ], accent: "green", price: "PKR 12,000", duration: "1–1.5 months" },
     { id: "04", tag: "TRACK / 04", title: "Game Development with Pygame", subtitle: "Build your own small games and learn while having fun.",
       points: [
         { label: "Pygame", body: "Game loops, sprites, sounds and simple physics." },
         { label: "Design", body: "Levels, controls and game states — think like a game designer." }
-      ], note: "You should complete the Python track first.", accent: "teal" },
+      ], note: "You should complete the Python track first.", accent: "teal", price: "PKR 12,000", duration: "1–1.5 months" },
     { id: "05", tag: "TRACK / 05", title: "MS Access & Databases", subtitle: "Understand how data is stored, connected and queried.",
       points: [
         { label: "Tables & Relationships", body: "Design tables, set primary keys and link them the right way." },
         { label: "Queries & Forms", body: "Build queries, forms and reports for real-world use cases." },
         { label: "SQL Basics", body: "A gentle introduction to SQL so databases stop feeling scary." }
-      ], accent: "purple" },
+      ], accent: "purple", price: "PKR 7,500", duration: "1–1.5 months" },
     { id: "06", tag: "TRACK / 06", title: "AI-Assisted Coding", subtitle: "Learn to work with AI tools the smart way — without losing your basics.",
       points: [
         { label: "Prompting", body: "How to ask AI the right questions to get useful, correct answers." },
         { label: "Debugging with AI", body: "Read, fix and improve code faster with AI as a helper." },
         { label: "Thinking First", body: "We make sure you understand the logic before you use any AI shortcut." }
-      ], accent: "green" },
+      ], accent: "green", price: "PKR 7,500", duration: "1–1.5 months" },
     { id: "07", tag: "TRACK / 07", title: "Productivity Suite", subtitle: "The everyday tools every student and professional should know.",
       points: [
         { label: "MS Word", body: "Neat documents, reports and assignments that look professional." },
         { label: "MS Excel", body: "Formulas, tables and simple data analysis, step by step." },
         { label: "MS PowerPoint", body: "Presentations that clearly explain your ideas." }
-      ], accent: "teal" }
+      ], accent: "teal", price: "PKR 5,000", duration: "1–1.5 months" }
   ];
 
   var ACCENT_VARS = { teal: "var(--neon-teal)", purple: "var(--neon-purple)", green: "var(--neon-green)" };
@@ -613,6 +619,16 @@
         el("p", { class: "tc-sub", text: t.subtitle }),
         pointsList
       ];
+
+      if (t.price) {
+        var priceEl = el("div", { class: "tc-price" }, [document.createTextNode(t.price)]);
+        priceEl.appendChild(el("small", { text: "/ course" }));
+        var priceRow = el("div", { class: "tc-price-row" }, [
+          priceEl,
+          el("span", { class: "tc-duration", text: t.duration || "" })
+        ]);
+        cardChildren.push(priceRow);
+      }
 
       if (t.note) {
         cardChildren.push(el("div", { class: "tc-note", text: "⚠ " + t.note }));
