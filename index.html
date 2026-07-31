@@ -152,6 +152,17 @@
     border: 1px solid oklch(1 0 0 / 0.06);
     transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 350ms ease, box-shadow 350ms ease;
     overflow: hidden;
+    cursor: pointer;
+  }
+  .tc-cta {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    color: var(--neon-green);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
   .track-card::after {
     content: "";
@@ -365,6 +376,9 @@
   .contact-card .cc-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.15em; margin-bottom: 0.5rem; }
   .contact-card .cc-main { font-size: 1.25rem; font-weight: 600; }
   .contact-card .cc-note { font-size: 0.875rem; color: var(--muted-foreground); margin-top: 0.75rem; }
+  .cc-wa-line { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .cc-wa-line + .cc-wa-line { margin-top: 0.5rem; }
+  .cc-wa-tag { font-family: var(--font-mono); font-size: 0.68rem; color: var(--neon-green); border: 1px solid oklch(0.88 0.24 145 / 0.4); border-radius: 999px; padding: 0.15rem 0.5rem; white-space: nowrap; }
 
   .contact-ctas { margin-top: 2.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 
@@ -500,11 +514,17 @@
     <p class="contact-sub">All our classes are held online — you can join from anywhere. Each course runs for approximately 1 to 1.5 months. Learning material is provided if needed. Reach out for course details, fee structure, or to ask us anything.</p>
 
     <div class="contact-cards">
-      <a href="tel:+923452182099" class="contact-card ct-teal">
+      <div class="contact-card ct-teal">
         <div class="cc-label" style="color:var(--neon-teal)">CALL / WHATSAPP</div>
-        <div class="cc-main">+92 345 218 2099</div>
-        <div class="cc-main" style="margin-top:0.5rem;">+92 312 231 1542</div>
-      </a>
+        <a href="https://wa.me/923452182099?text=Hi%20Incent%20CS%2C%20I%20want%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener" class="cc-wa-line">
+          <span class="cc-main">+92 345 218 2099</span>
+          <span class="cc-wa-tag">WHATSAPP →</span>
+        </a>
+        <a href="https://wa.me/923122311542?text=Hi%20Incent%20CS%2C%20I%20want%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener" class="cc-wa-line">
+          <span class="cc-main">+92 312 231 1542</span>
+          <span class="cc-wa-tag">WHATSAPP →</span>
+        </a>
+      </div>
       <a href="mailto:IncentCS.PK@gmail.com" class="contact-card ct-purple">
         <div class="cc-label" style="color:var(--neon-purple)">EMAIL</div>
         <div class="cc-main">IncentCS.PK@gmail.com</div>
@@ -536,7 +556,7 @@
 <script>
   var TRACKS = [
     { id: "01", tag: "TRACK / 01", title: "Web Development Essentials", subtitle: "Learn how real websites are built, one layer at a time.",
-      points: [
+    points: [
         { label: "HTML", body: "Clean, semantic pages that actually make sense to browsers and readers." },
         { label: "CSS", body: "Modern layouts with Flexbox and Grid, plus polished responsive design." },
         { label: "JavaScript", body: "ES6+, DOM handling, events and async work — explained the simple way." }
@@ -633,11 +653,19 @@
         cardChildren.push(el("div", { class: "tc-note", text: "⚠ " + t.note }));
       }
 
+      cardChildren.push(el("div", { class: "tc-cta", text: "↓ Tap to go to Contact Us" }));
+
       var card = el("article", { class: "track-card" }, cardChildren);
       card.addEventListener("mousemove", function (e) {
         var rect = card.getBoundingClientRect();
         card.style.setProperty("--mx", (e.clientX - rect.left) + "px");
         card.style.setProperty("--my", (e.clientY - rect.top) + "px");
+      });
+      card.addEventListener("click", function () {
+        var contactSection = document.getElementById("contact");
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       });
 
       grid.appendChild(card);
